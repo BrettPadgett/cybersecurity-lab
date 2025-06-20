@@ -35,5 +35,6 @@ This project is designed to simulate real-world cybersecurity scenarios in a saf
 
 4. **Post-Install Setup**  
    ```bash
+   #Most tools come with the Kali Installer Image
    sudo apt update && sudo apt upgrade -y
-   sudo apt install nmap wireshark hydra john sqlmap nikto gobuster -y #Most tools come with the Kali Installer Image
+   sudo apt install nmap wireshark hydra john sqlmap nikto gobuster -y 
