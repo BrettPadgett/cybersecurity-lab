@@ -1,7 +1,7 @@
 ## 🔍 Purpose
 Scan a local target to discover open ports and identify the services running on them.
 
-1. Task 1: Check Your Own IP Addres
+## Task 1: Check Your Own IP Addres
 #Identify target (**10.0.2.15**)
 
 ip a 
@@ -22,6 +22,56 @@ ip a
        valid_lft 86348sec preferred_lft 14348sec
     inet6 fe80::a00:27ff:feb4:198f/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
+
+
+## Task 2: Scan Your Own Machine with Nmap
+
+sudo systemctl start apache2
+#Manually start a web server which creates a target to scan
+[sudo] password for brett: 
+                                                                             
+┌──(brett㉿VBox1)-[~]
+└─$ sudo nmap -sV 127.0.0.1  
+#nmap scan of my loopback IP address (-sV to identify service)
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-06-20 18:58 EDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000010s latency).
+Not shown: 999 closed tcp ports (reset)
+
+#Identified the service running (Apache web server)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.63 ((Debian)) 
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 6.22 seconds
+
+
+## Task 3: Run a DNS Lookup on a Known Domain
+
+dig scanme.nmap.org
+#Using dig tool to query a test domain provided by Nmap. Passive recon tool without touching the target
+
+; <<>> DiG 9.20.9-1-Debian <<>> scanme.nmap.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61292
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;scanme.nmap.org.               IN      A
+
+;; ANSWER SECTION:
+scanme.nmap.org.        3600    IN      A       45.33.32.156
+
+;; Query time: 131 msec
+;; SERVER: 10.0.2.3#53(10.0.2.3) (UDP)
+;; WHEN: Fri Jun 20 19:08:16 EDT 2025
+;; MSG SIZE  rcvd: 60
+
+
+
 
 
 
