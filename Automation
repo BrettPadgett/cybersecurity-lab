@@ -1,2 +1,67 @@
 ## 🔍 Purpose
 Scripts and tools you use to streamline lab setup, tasks, or tool installation.
+
+## Task 1: System Hardening Script (Linux Security Baseline)
+# Creates a new non-root sudo user
+# Disables root SSH access (if enabled)
+# Enables the UFW firewall
+# Forces strong password rules
+# Enables automatic updates
+
+nano system-hardening.sh
+# Paste script into nano editor 
+#!/bin/bash
+echo "[*] Creating secure user..."
+sudo adduser secureuser
+sudo usermod -aG sudo secureuser
+
+echo "[*] Disabling root SSH login..."
+sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+sudo systemctl restart ssh
+
+echo "[*] Enabling UFW firewall..."
+sudo ufw allow OpenSSH
+sudo ufw enable
+
+echo "[*] Installing and enabling auto-updates..."
+sudo apt install -y unattended-upgrades
+sudo dpkg-reconfigure -plow unattended-upgrades
+
+chmod +x system-hardening.sh
+# Makes system-hardening executable
+sudo ./system-hardening.sh
+# Run it - DONE
+
+
+## Task 2: Scheduled server health report
+# Generate CPU, memory, and disk usage
+
+nano ~/health-check.sh
+
+#!/bin/bash
+
+timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+output="$HOME/health-report-$timestamp.txt"
+
+{
+  echo "==== Server Health Report - $timestamp ===="
+  echo -e "\n--- CPU ---"
+  top -bn1 | grep "Cpu"
+  echo -e "\n--- Memory ---"
+  free -h
+  echo -e "\n--- Disk ---"
+  df -h
+} > "$output"
+
+echo "[✓] Health report saved: $output"
+
+chmod +x ~/health-check.sh
+./health-check.sh
+
+crontab -e
+# Select nano
+0 8 * * * /home/kali/health-check.sh 
+# Runs everyday at 8:00 am
+
+
+
