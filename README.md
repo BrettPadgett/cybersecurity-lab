@@ -1,8 +1,9 @@
 # cybersecurity-lab
 
-# 🛡️ Kali Linux Cybersecurity Lab
+# 🛡️ Linux Cybersecurity Lab
 
-A personal virtual lab environment built using Kali Linux on VirtualBox for deeper understanding of Kali Linux, cybersecurity, and information security operations. 
+A personal virtual lab environment built using Kali Linux on VirtualBox for deeper understanding of Linux, cybersecurity, and information security operations. 
+
 
 ## 🔍 Purpose
 
@@ -13,6 +14,7 @@ This project is designed to simulate real-world cybersecurity scenarios in a saf
 - **Host OS**: Windows 11 (HP Pavilion Aero 13)
 - **Virtualization**: VirtualBox
 - **Guest OS**: Kali Linux (latest ISO)
+- **Guest OS**: Red Hat Enterprise Linux (RHEL 9.6)
 - **Networking**: Bridged + Host-only adapters for internal and external simulation
 - **Optional Tools**: Docker, WSL2, Metasploitable2, OWASP Juice Shop
 
