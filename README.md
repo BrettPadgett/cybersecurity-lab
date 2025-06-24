@@ -2,7 +2,7 @@
 
 # 🛡️ Linux Cybersecurity Lab
 
-A personal virtual lab environment built using Kali Linux on VirtualBox for deeper understanding of Linux, cybersecurity, and information security operations. 
+A personal virtual lab environment built using Kali Linux and RHEL on VirtualBox for deeper understanding of Linux, cybersecurity, and information security operations. 
 
 
 ## 🔍 Purpose
