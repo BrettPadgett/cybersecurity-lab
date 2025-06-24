@@ -16,7 +16,6 @@ This project is designed to simulate real-world cybersecurity scenarios in a saf
 - **Guest OS**: Kali Linux (latest ISO)
 - **Guest OS**: Red Hat Enterprise Linux (RHEL 9.6)
 - **Networking**: Bridged + Host-only adapters for internal and external simulation
-- **Optional Tools**: Docker, WSL2, Metasploitable2, OWASP Juice Shop
 
 ## ⚙️ Setup Instructions
 
