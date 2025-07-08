@@ -1,2 +1,9 @@
 ## 🔍 Purpose
 For offensive security testing and exploitation tasks. This showcases how to identify vulnerabilities and simulate attacks.
+
+# Cybersecurity Lab Topology
+- Kali VM: Attacker | 192.168.56.101
+- RHEL VM: Defender | 192.168.56.102
+- Host-Only VirtualBox Adapter
+- No SIEM used — detection through logs, scripts, and live monitoring
+
