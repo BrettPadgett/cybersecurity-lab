@@ -7,3 +7,24 @@ For offensive security testing and exploitation tasks. This showcases how to ide
 - Host-Only VirtualBox Adapter
 - No SIEM used — detection through logs, scripts, and live monitoring
 
+1. Port Scanning with Nmap (Kali VM)
+
+nmap -sS -sV -O 192.168.56.102
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-08 19:37 EDT
+Nmap scan report for 192.168.56.102
+Host is up (0.0010s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE VERSION
+22/tcp  open  ssh     OpenSSH 8.7 (protocol 2.0)
+111/tcp open  rpcbind 2-4 (RPC #100000)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: bridge|VoIP adapter|general purpose
+Running (JUST GUESSING): Oracle Virtualbox (98%), Slirp (98%), AT&T embedded (95%), QEMU (94%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:danny_gasparovski:slirp cpe:/a:qemu:qemu
+Aggressive OS guesses: Oracle Virtualbox Slirp NAT bridge (98%), AT&T BGW210 voice gateway (95%), QEMU user mode network gateway (94%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 14.90 seconds
+
+
