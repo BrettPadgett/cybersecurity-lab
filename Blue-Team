@@ -6,3 +6,8 @@ Defensive tasks — network monitoring, threat detection, and mitigation.
 - RHEL VM: Defender | 192.168.56.102
 - Host-Only VirtualBox Adapter
 - No SIEM used — detection through logs, scripts, and live monitoring
+
+1. Monitoring 
+sudo journalctl -xe
+
+2. Detection 
