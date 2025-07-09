@@ -11,3 +11,25 @@ Defensive tasks — network monitoring, threat detection, and mitigation.
 sudo journalctl -xe
 
 2. Detection 
+#Notice the multiple failed login attempts from 192.168.56.101
+sudo grep "Failed password" /var/log/secure
+Jul  8 20:02:18 vbox sudo[6181]: bpadgett : TTY=pts/0 ; PWD=/home/bpadgett ; USER=root ; COMMAND=/bin/grep 'Failed password' /var/log/secure
+Jul  8 20:06:08 vbox sshd[6207]: Failed password for root from 192.168.56.1 port 54772 ssh2
+Jul  8 20:06:08 vbox sshd[6208]: Failed password for root from 192.168.56.1 port 54773 ssh2
+Jul  8 20:06:08 vbox sshd[6206]: Failed password for root from 192.168.56.1 port 54771 ssh2
+Jul  8 20:06:08 vbox sshd[6209]: Failed password for root from 192.168.56.1 port 54774 ssh2
+Jul  8 20:06:10 vbox sshd[6207]: Failed password for root from 192.168.56.1 port 54772 ssh2
+Jul  8 20:06:10 vbox sshd[6208]: Failed password for root from 192.168.56.1 port 54773 ssh2
+Jul  8 20:06:10 vbox sshd[6206]: Failed password for root from 192.168.56.1 port 54771 ssh2
+Jul  8 20:06:10 vbox sshd[6209]: Failed password for root from 192.168.56.1 port 54774 ssh2
+Jul  8 20:06:13 vbox sshd[6207]: Failed password for root from 192.168.56.1 port 54772 ssh2
+Jul  8 20:06:13 vbox sshd[6208]: Failed password for root from 192.168.56.1 port 54773 ssh2
+Jul  8 20:06:13 vbox sshd[6206]: Failed password for root from 192.168.56.1 port 54771 ssh2
+Jul  8 20:06:13 vbox sshd[6209]: Failed password for root from 192.168.56.1 port 54774 ssh2
+Jul  8 20:06:15 vbox sshd[6207]: Failed password for root from 192.168.56.1 port 54772 ssh2
+Jul  8 20:06:15 vbox sshd[6208]: Failed password for root from 192.168.56.1 port 54773 ssh2
+Jul  8 20:06:15 vbox sshd[6206]: Failed password for root from 192.168.56.1 port 54771 ssh2
+Jul  8 20:06:15 vbox sshd[6209]: Failed password for root from 192.168.56.1 port 54774 ssh2
+Jul  8 20:06:18 vbox sshd[6207]: Failed password for root from 192.168.56.1 port 54772 ssh2
+Jul  8 20:06:18 vbox sshd[6208]: Failed password for root from 192.168.56.1 port 54773 ssh2
+Jul  8 20:06:18 vbox sshd[6206]: Failed password for root from 192.168.56.1 port 54771 ssh2
